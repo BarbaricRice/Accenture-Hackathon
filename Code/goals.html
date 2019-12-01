@@ -1,0 +1,92 @@
+<!doctype html>
+<!-- the goals page for the app. This is where a summary of its features are displayed for the user i.e. goal progress, badges, comparison stats, savings etc. -->
+<html>
+    <head>
+        <title>Goals</title>
+        
+        <!-- imports the js scripts to generate mdl interface -->
+        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+        
+        <!-- imports the js scripts to generate the charts -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> 
+        
+        <!-- viewport adjusts size of page according to device size -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        
+        <!-- importing icons from google api -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> 
+        
+        <!-- importing text font -->
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+
+        <!-- custom image in tab -->
+        <link rel="shortcut icon" sizes="196x196" href="bird.jpg" /> 
+        
+    </head>
+
+    <body>                 
+        <!-- for the header text, background colour and mdl drawer before the main body -->
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+          <header class="mdl-layout__header" style="background-color:#ba68c8"> <!-- CHANGE HEADER COLOUR HERE -->
+                <div class="mdl-layout__header-row">
+                      <!-- Title -->
+                      <span class="mdl-layout-title">Goals</span> 
+                      <div class="mdl-layout-spacer"></div>                 
+                </div>
+
+            </header> 
+            
+                <div class="mdl-layout__drawer"> 
+                    <span class="mdl-layout-title">Navigate to:</span>
+                    <!-- list of available pages to navigate to from drawer menu -->
+                    
+                      <nav class="mdl-navigation">
+                      <a class="mdl-navigation__link" href="home.html">Home</a>
+                      <a class="mdl-navigation__link" href="profile.html">Profile</a>
+                      <a class="mdl-navigation__link" href="goals.html">Goals</a>
+                      <a class="mdl-navigation__link" href="budget.html">Finance</a>
+                      <a class="mdl-navigation__link" href="stats.html">Visualise</a>
+                      </nav> 
+                </div> 
+
+
+
+
+        <main>
+          <br>
+            <!-- creates card to display current goals progress and option to edit -->
+                <div class="demo-card-wide mdl-card mdl-shadow--2dp" style="width:480px">  
+                <h6>&nbsp; Savings Goal</h6>
+                  <div class="mdl-card__title" style="height:171px; color:#fff; background: url('savings_goal.png') center / cover;">
+                  </div>
+                  <div class="mdl-card__supporting-text">
+                    
+                  </div>
+                </div>
+        <br>      
+            &nbsp;
+            &nbsp;
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+              Edit goal
+            </button>
+            
+            
+            <!-- creates card to display advertising elements based on savings and personal interests -->
+            <br><br>
+            <div class="demo-card-wide mdl-card mdl-shadow--2dp" style="width:480px">  
+                  <div class="mdl-card__title" style="height:50px; color:#fff; background: white;">
+                  </div>
+                  <div class="mdl-card__supporting-text">
+                      You are saving to buy the latest 13-inch-MacBook Pro. This item is currently on special for $899. Would you like to use your savings to purchase this?
+                      <br><br>
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                      Go to website
+                    </button>
+                  </div>
+                </div>     
+            <br>
+        </main>
+        </div>
+    </body>
+</html>
+

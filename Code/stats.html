@@ -1,0 +1,235 @@
+<!doctype html>
+<!-- the home page for the app. This is where a summary of its features are displayed for the user i.e. goal progress, badges, comparison stats, savings etc. -->
+<html>
+    <head>
+        <title>Test</title>
+        
+        <!-- imports the js scripts to generate mdl interface -->
+        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+        
+        <!-- imports the js scripts to generate the charts -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> 
+        
+        <!-- viewport adjusts size of page according to device size -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        
+        <!-- importing icons from google api -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> 
+        
+        <!-- importing text font -->
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+        
+        <!--<link rel="stylesheet" href="css/navigationApp.css" /> <!-- CHANGE NAMES AND STUFF -->
+      
+        <!--<meta name="apple-mobile-web-app-capable" content="yes" /> -->
+        
+        <!--<meta name="mobile-web-app-capable" content="yes" /> -->
+        
+        <!-- custom image in tab -->
+        <link rel="shortcut icon" sizes="196x196" href="bird.jpg" /> 
+        
+    </head>
+
+    <body>                 
+        <!-- for the header text, background colour and mdl drawer before the main body -->
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+          <header class="mdl-layout__header" style="background-color:#ba68c8"> <!-- CHANGE HEADER COLOUR HERE -->
+                <div class="mdl-layout__header-row">
+                      <!-- Title -->
+                      <span class="mdl-layout-title">Visualisation</span> 
+                      <div class="mdl-layout-spacer"></div>                 
+                </div>
+
+            </header> 
+            
+                <div class="mdl-layout__drawer"> 
+                    <span class="mdl-layout-title">Navigate to:</span>
+                    <!-- list of available pages to navigate to from drawer menu -->
+                    
+                      <nav class="mdl-navigation">
+                      <a class="mdl-navigation__link" href="home.html">Home</a>
+                      <a class="mdl-navigation__link" href="profile.html">Profile</a>
+                      <a class="mdl-navigation__link" href="goals.html">Goals</a>
+                      <a class="mdl-navigation__link" href="budget.html">Finance</a>
+                      <a class="mdl-navigation__link" href="stats.html">Visualise</a>
+                      </nav> 
+                </div> 
+
+
+
+        
+        <main class="mdl-layout__content">
+            <br>
+                <!-- first mdl grid with pie chart -->
+                <div class="demo-card-wide mdl-card mdl-shadow--2dp" style="width:480px">  
+                  <div class="mdl-card__title" style="height:480px; color:#fff; background:white;">
+                    <canvas id="myChart" width="460px" height="480px"></canvas>
+                    <!-- js script to generate pie chart with spending data -->
+                    <script>
+                            var ctx = document.getElementById('myChart').getContext('2d');
+                            var chart = new Chart(ctx, {
+                                // The type of chart we want to create
+                                type: 'pie',
+
+                                // The data for our dataset
+                                data: {
+                                    labels: ['Food', 'Clothing', 'Alcohol', 'Transport', 'Recreation'],
+                                    datasets: [{
+                                        label: 'Pie',
+                                        backgroundColor: [
+                                                    'red',
+                                                    'orange',
+                                                    'yellow',
+                                                    'green',
+                                                    'blue'
+                                                ],
+                                        data: [156, 15, 44, 68, 89]
+                                    }]
+                                },
+
+                                // Configuration options go here
+                                options: {
+                                        title: {
+                                                display: true,
+                                                text: 'Current Month Breakdown ($)'
+                                            }
+                                        }
+                            });
+</script> 
+                    </div>
+                </div>
+                
+                <hr style="width:480px">
+            
+                <!-- second mdl grid with line graph -->
+                <div class="demo-card-wide mdl-card mdl-shadow--2dp" style="width:480px">  
+                  <div class="mdl-card__title" style="height:480px; color:#fff; background:white;">
+                    <canvas id="myChart1" width="460px" height="480px"></canvas>
+                    <!-- js script to generate line graph with spending data -->
+                    <script>
+                        var ctx1 = document.getElementById('myChart1').getContext('2d');
+                        var chart1 = new Chart(ctx1, {
+                            // The type of chart we want to create
+                            type: 'line',
+
+                            // The data for our dataset
+                                data: {
+                                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+                                    datasets: [{
+                                        label: 'Other People',
+                                        backgroundColor: 'red',
+                                        borderColor: 'red',
+                                        data: [3876, 3294, 3687, 3494, 3321],
+                                        fill: false,
+                                    },{
+                                        label: 'You',
+                                        backgroundColor: 'blue',
+                                        borderColor: 'blue',
+                                        data: [3501, 3451, 3874, 3311, 3165],
+                                        fill: false,
+                                    }]
+                                },
+
+                                // Configuration options go here
+                                options: {
+                                            responsive: true,
+                                            title: {
+                                                display: true,
+                                                text: 'Monthly Comparisons'
+                                            },
+                                            tooltips: {
+                                                mode: 'index',
+                                                intersect: false,
+                                            },
+                                            hover: {
+                                                mode: 'nearest',
+                                                intersect: true
+                                            },
+                                            scales: {
+                                                xAxes: [{
+                                                    display: true,
+                                                    scaleLabel: {
+                                                        display: true,
+                                                        labelString: 'Month'
+                                                    }
+                                                }],
+                                                yAxes: [{
+                                                    display: true,
+                                                    scaleLabel: {
+                                                        display: true,
+                                                        labelString: 'Value ($)'
+                                                    }
+                                                }]
+                                            }
+                                    }
+                            });
+                    </script> 
+                    </div>
+                </div>
+                
+                <hr style="width:480px">
+
+                <!-- fdsfsdfds -->
+                <div class="demo-card-wide mdl-card mdl-shadow--2dp" style="width:480px">  
+                  <div class="mdl-card__title" style="height:480px; color:#fff; background:white;">
+                    <canvas id="myChart2" width="460px" height="480px"></canvas>
+                    <script>
+                    var ctx2 = document.getElementById('myChart2').getContext('2d');
+
+                    var chart = new Chart(ctx2, {
+                        // The type of chart we want to create
+                        type: 'radar',
+
+                        // The data for our dataset
+                        data: {
+                            labels: ['Housing', 'Power', 'Food', 'Clothing', 'Health', 'Alcohol', 'Transport', 'Recreation'],
+                            datasets: [{
+                                label: 'Current Month',
+                                backgroundColor: 'rgba(255,0,0,0.2)',
+                                borderColor: 'red',
+                                pointBackgroundColor: 'red',
+                                data: [86, 147, 137, 39, 42, 198, 46, 111]
+                            }, {
+                                label: 'Average',
+                                backgroundColor: 'rgba(0,0,0,0)',
+                                borderColor: 'rgba(0,0,0,0.4)',
+                                pointBackgroundColor: 'rgba(0,0,0,0.4)',
+                                data: [100, 100, 100, 100, 100, 100, 100, 100]
+                            }, {
+                                label: 'Last Month',
+                                backgroundColor: 'rgba(0,100,230,0.2)',
+                                borderColor: 'rgba(0,100,230,0.8)',
+                                pointBackgroundColor: 'rgba(0,0,0,0.4)',
+                                data: [75, 165, 150, 60, 40, 150, 63, 105]
+                            }]
+                        },
+
+                        // Configuration options go here
+                        options: {
+                                legend: {
+                                    position: 'top',
+                                },
+                                title: {
+                                        display: true,
+                                        text: 'Current Month Breakdown (%)'
+                                },
+                                scale: {
+                                    ticks: {
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                    });
+                    </script>
+                    
+                    </div>
+                    
+                </div>    
+            <br>
+            
+        </main>
+     
+        </div>
+    </body>
+</html>
+
